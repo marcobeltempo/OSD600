@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<meta charset="utf-8">
-		<title>OSD600-Lab 11 </title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-<body>
-<div id="test1">
-<div id ="test2">
-<img id='image-1234' src="" width="100" height="100">
-</div>
-</div>
-<script>
-var img = document.querySelector('#image-1234');
-
-
-$.get( img.src="https://i2.wp.com/www.marcobeltempo.com/wp-content/uploads/2016/05/mb_logo_38x38.png?fit=38%2C38&ssl=1"
-, function( data ) {
-document.getElementById("test2").style.backgroundColor='green';
-})
-    .done(function() {
-
-  })
-  .fail(function() {
-    alert( "error" );
-  })
-  .always(function() {
-  });
-
-</script>
-</body>
+   <head>
+      <meta charset="utf-8">
+      <title>OSD600-Lab 11 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      </div>
+      </div>
+      <script>
+         var img = new Image(100,100);
+          img.src='https://i2.wp.com/www.marcobeltempo.com/wp-content/uploads/2016/05/mb_logo_38x38.png?fit=38%2C38&ssl=1'
+         document.body.appendChild(img);
+         img.onload = function() {
+           document.getElementsByTagName("body")[0].style.backgroundColor="red";
+         }
+         img.onerror = function (){alert("Error")};
+         
+         img.src='https://i2.wp.com/www.marcobeltempo.com/wp-content/uploads/2016/05/mb_logo_38x38.png?fit=38%2C38&ssl=1'
+         
+         document.body.appendChild(img);
+         img.onload = function() {
+           document.getElementsByTagName("body")[0].style.backgroundColor="green";
+         }
+         img.onerror = function (){alert("Error")};
+      </script>
+   </body>
 </html>
