@@ -6,24 +6,25 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
-      </div>
-      </div>
       <script>
-         var img = new Image(100,100);
-          img.src='https://i2.wp.com/www.marcobeltempo.com/wp-content/uploads/2016/05/mb_logo_38x38.png?fit=38%2C38&ssl=1'
-         document.body.appendChild(img);
-         img.onload = function() {
-           document.getElementsByTagName("body")[0].style.backgroundColor="red";
-         }
-         img.onerror = function (){alert("Error")};
-         
-         img.src='https://i2.wp.com/www.marcobeltempo.com/wp-content/uploads/2016/05/mb_logo_38x38.png?fit=38%2C38&ssl=1'
-         
-         document.body.appendChild(img);
-         img.onload = function() {
-           document.getElementsByTagName("body")[0].style.backgroundColor="green";
-         }
-         img.onerror = function (){alert("Error")};
+         var img = new Image();
+          var url = 'https://i2.wp.com/www.marcobeltempo.com/wp-content/uploads/2016/05/mb_logo_38x38.png?fit=38%2C38&ssl=1'
+
+function setBackground(colour) {
+    document.body.style.backgroundColor = colour;
+}
+ function firstLoad() {
+      setBackground("red");
+      img.onload = secondLoad;
+      img.src = url;
+    }
+    
+    function secondLoad() {
+      setBackground("green");
+    }
+
+    img.onload = firstLoad;
+    img.src = url;
       </script>
    </body>
 </html>
